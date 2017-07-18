@@ -9,29 +9,53 @@ import java.time.*;
 public class Oseba {
     private String priimek;
     private String ime;
-    LocalDate datumRojstva;
+    private LocalDate datumRojstva;
+    private Spol spol;
 
-    public String getPriimek() {
-        return priimek;
+    public Oseba(String priimek, String ime) {
+        this.priimek = priimek;
+        this.ime = ime;
     }
 
+    public String getPriimek() { return priimek;  }
+
     public void setPriimek(String priimek) {
+
         this.priimek = priimek;
     }
 
     public String getIme() {
+
         return ime;
     }
 
     public void setIme(String ime) {
+
         this.ime = ime;
     }
 
     public LocalDate getDatumRojstva() {
+
         return datumRojstva;
     }
 
     public void setDatumRojstva(LocalDate datumRojstva) {
+
         this.datumRojstva = datumRojstva;
+    }
+
+    public int getAge(LocalDate birthDay){
+        LocalDate today = LocalDate.now();
+        Period p = Period.between(birthDay, today);
+        int years = p.getYears();
+        return years;
+    }
+
+    public Spol getSpol() {
+        return spol;
+    }
+
+    public void setSpol(Spol spol) {
+        this.spol = spol;
     }
 }
