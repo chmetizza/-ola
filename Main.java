@@ -19,7 +19,7 @@ public class Main {
         System.out.println(razrednik2.getIme() + " je razrednik " + razrednik2.getRazred().getRazredOznaka() + " razreda.");
         String poucuje = "";
         int stPred = razrednik2.getPredmeti().length;
-        for(Predmet pred : razrednik2.getPredmeti()) {
+        for(Predmet pred : razrednik2.getPredmeti()) {//mogoce bi tuki lahko uporabila Stream
             stPred = stPred - 1;
             if(stPred == 1){
                 poucuje = poucuje + pred.getNazivPred() + " in ";
